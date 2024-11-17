@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .appliance{
+            height: 400px;
+            width: 50%;
+            border: 1px solid;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="appliance" id="bulb-container" style="background-color:bisque;">
+        <h3>Light</h3>
+        <button onclick="toggleAppliance(this)">Turn ON</button>
+        <div class="control" >
+          <label for="">Brightness: </label>
+         
+          
+          <input  type="range" min="0" max="100" value="20" oninput="updateBrightness('lightBrightness', this)" />
+          <div class="brightness-preview" style="opacity: 0.5;"></div>
+        </div>
+        <script>
+            function updateBrightness(displayId, input) {
+    debugger
+    let bulbContainer = document.getElementById("bulb-container")
+    const brightness = input.value;
+    bulbContainer.style.filter = `brightness(${parseInt(input.value)}%)`;
+            }
+        </script>
+</body>
+</html>

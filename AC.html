@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AC  Controller</title>
+  
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.status {
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #0056b3;
+  box-shadow: 0px 2px 3px  gray;
+
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.controls button {
+  font-size: 20px;
+  width: 50px;
+  height: 50px;
+
+}
+
+.controls span {
+  font-size: 24px;
+  margin: 0 20px;
+  font-weight: bold;
+
+}
+
+#message {
+  margin-top: 20px;
+  color: red;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AC Temperature Controller</h1>
+    <div class="status">
+      <p id="update">AC is currently <span id="text">OFF</span></p>
+      <button id="change" onclick="toggleAC()">Turn ON AC</button>
+    </div>
+    <div class="controls">
+      <button onclick="decreaseTemp()">-</button>
+      <span id="temperature">24°C</span>
+      <button onclick="increaseTemp()">+</button>
+    </div>
+    <p id="message"></p>
+  </div>
+  
+
+  <script>
+    let acOn = false;
+let currentTemp = 24;
+
+const statusText = document.getElementById("text");
+const changingButton = document.getElementById("change");
+const tempDisplay = document.getElementById("temperature");
+const message = document.getElementById("message");
+
+function toggleAC() {
+  acOn = !acOn;
+  if (acOn) {
+    statusText.textContent = "ON";
+    statusText.style.color = "green";
+    changingButton.textContent = "Turn OFF AC";
+    message.textContent = "";
+  } else {
+    statusText.textContent = "OFF";
+    statusText.style.color = "red";
+    changingButton.textContent = "Turn ON AC";
+    message.textContent = "Please turn on your AC.";
+  }
+}
+
+function increaseTemp() {
+  if (acOn) {
+    currentTemp++;
+    tempDisplay.textContent = `${currentTemp}°C`;
+    message.textContent = "";
+  } else {
+    message.textContent = "Please turn on your AC.";
+  }
+}
+
+function decreaseTemp() {
+  if (acOn) {
+    currentTemp--;
+    tempDisplay.textContent = `${currentTemp}°C`;
+    message.textContent = "";
+  } else {
+    message.textContent = "Please turn on your AC.";
+  }
+}
+
+  </script>
+</body>
+</html>

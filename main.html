@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: Arial, sans-serif;
+            /* overflow-y: inherit; */
+            /* background-image: linear-gradient(to top right,rgb(184, 184, 233),rgb(96, 96, 183),rgb(37, 37, 142)); */
+          
+      
+      
+           
+            
+        }
+        .heading{
+            color:black;
+            text-align: center;
+            margin-top: 30px;
+            font-weight: bolder;
+            /* line-height: 10px; */
+            font-size: 2rem;
+            text-shadow: 2px 2px 3px whitesmoke;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .box{
+         
+            /* display: flex;
+             flex-wrap: wrap;
+          
+            /* justify-content: space-between; */
+            /* align-content: space-around; */
+             opacity: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+           box-shadow: 0px 1px 1px 2px grey;
+            height: 430px;
+            width: 430px;
+            border: 1px solid black;
+            border: none;
+            margin: 50px auto; 
+            background-color: royalblue;
+        }
+        .mini{
+            height: 180px;
+            width: 180px;
+            border: 1px solid;
+            border-radius: 5px;
+            margin: 10px;
+            display: flex;
+           
+            flex-wrap: wrap;
+
+        }
+        .mini:hover{
+            box-shadow: 0px 0px 3px 2px gray;
+           background-color: gray;
+        }
+      
+        @media (max-width: 767px) {
+       body{
+        display: flex;
+        flex-wrap: wrap;
+        background-color: sandybrown;
+       }
+    }
+    .all_Img{
+        overflow-x: hidden;
+        text-align: center;
+        height: 100px;
+        width: 120px;
+        padding-bottom: 30px;
+
+    }
+    #fan_img{
+        height: 80px;
+    }
+    
+    .index1{
+        padding-left: 70px;
+        padding-top: -50px;
+      
+    }
+    .index2{
+        padding-top: 130px;
+    }
+    .index3{
+        padding-top: 130px;
+    }
+    .index4{
+        padding-top: 130px;
+    }
+    .last-img{
+        height: 120px;
+        width: 100px;
+    }
+    </style>
+</head>
+<body>
+    <h2 class="heading">Smart Appliance Controller</h2>
+    <div class="box">
+        <div class="mini"><a href="./AC.html"><img class="all_Img" src="./images/AC.png" alt=""></a>
+            <h3 class="index1">Smart AC</h3>
+        </div>
+        <div class="mini">
+           <a href="./fan.html"><img class="all_Img" id="fan_img" src="./images/Fan.png" alt=""></a>
+       <h3 class="index2">Fan</h3>
+        </div>
+        <div class="mini">
+           <a href="./tv.html"><img class="all_Img" src="./images/tv.png" alt=""></a>
+            <h3 class="index3">TV</h3>
+        </div>
+        <div class="mini">
+            <a href="./light.html"><img class="last-img" src="./images/light.png" alt=""></a>
+            <h3 class="index4">Light</h3>
+        </div>
+    </div>
+</body>
+</html>

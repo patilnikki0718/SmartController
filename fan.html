@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body {
+      font-family: Arial, sans-serif;
+      /* margin: 20px; */
+    }
+    .appliance {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="appliance">
+        <h3>Fan</h3>
+        <button onclick="toggleAppliance(this)">Turn ON</button>
+        <div class="control">
+          <label>Speed: <span id="fanSpeed">1</span></label>
+          <input type="range" min="1" max="5" value="1" oninput="updateSpeed('fanSpeed', this)" />
+        </div>
+      </div>
+      <script>
+         function updateSpeed(displayId, input) {
+    document.getElementById(displayId).textContent = input.value;
+  }
+      </script>
+</body>
+</html>

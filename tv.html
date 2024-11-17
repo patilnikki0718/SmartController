@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV On/Off Simulation</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #333;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.tv {
+    margin: 50px auto;
+    width: 300px;
+    height: 200px;
+    border: 5px solid black;
+    border-radius: 10px;
+    position: relative;
+}
+
+.screen {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.screen.on {
+    background-color: darkcyan;
+    color: black;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #555;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #777;
+}
+
+    </style>
+</head>
+<body>
+    <div class="tv">
+        <div class="screen off" id="screen">
+            <p id="message">TV is Off</p>
+        </div>
+        <button id="powerButton">Power</button>
+    </div>
+
+    <script>
+        const screen = document.getElementById("screen");
+const powerButton = document.getElementById("powerButton");
+const message = document.getElementById("message");
+
+let isOn = false;
+
+powerButton.addEventListener("click", () => {
+    isOn = !isOn;
+    if (isOn) {
+        screen.classList.add("on");
+        screen.classList.remove("off");
+        message.textContent = "TV is On";
+    } else {
+        screen.classList.add("off");
+        screen.classList.remove("on");
+        message.textContent = "TV is Off";
+    }
+});
+
+    </script>
+</body>
+</html>
